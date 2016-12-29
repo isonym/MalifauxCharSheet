@@ -1,27 +1,42 @@
-﻿namespace Engine.Model
+﻿using System.Collections.Generic;
+
+namespace Engine.Model
 {
     public class Character
     {
-        private string _name;
-        private string _playerName;
+        private readonly string _name;
+        private readonly string _playerName;
         private double _scrip;
+        private int _experiencePoints;
 
-        public string Name
+        private List<Item> _inventory;
+        private List<Aspect> _aspects;
+        private List<Skill> _skills;
+        private List<Spell> _spells;
+
+        public string Name => _name;
+
+        public string PlayerName => _playerName;
+
+        public double Scrip => _scrip;
+
+        public int ExperiencePoints => _experiencePoints;
+
+        public Character()
         {
-            get { return _name; }
-            set { _name = value; }
+            _experiencePoints = 0;
+
+            _inventory = new List<Item>();
+            _aspects = new List<Aspect>();
+            _skills = new List<Skill>();
+            _spells = new List<Spell>();
         }
 
-        public string PlayerName
+        public Character(string name, string playerName, double scrip) : this()
         {
-            get { return _playerName; }
-            set { _playerName = value; }
-        }
-
-        public double Scrip
-        {
-            get { return _scrip; }
-            set { _scrip = value; }
+            _name = name;
+            _playerName = playerName;
+            _scrip = scrip;
         }
     }
 }
