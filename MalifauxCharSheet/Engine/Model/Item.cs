@@ -15,5 +15,12 @@
             get { return _quantity; }
             set { _quantity = value; }
         }
+
+        public Item(string name, double cost, int quantity = 1)
+        {
+            _name = name;
+            _cost = cost;
+            _quantity = quantity;
+        }
     }
 }

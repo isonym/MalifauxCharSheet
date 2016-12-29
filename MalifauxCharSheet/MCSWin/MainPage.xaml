@@ -5,7 +5,8 @@
     xmlns:local="using:MCSWin"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+    mc:Ignorable="d"
+    FontSize="20">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
@@ -18,11 +19,12 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <Grid Grid.Column="0" Grid.Row="0" Background="Aqua">
+        <Grid Grid.Column="0" Grid.Row="0" Background="{StaticResource SystemControlBackgroundBaseLowBrush}" BorderThickness="5" BorderBrush="{StaticResource SystemControlBackgroundBaseLowBrush}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             
@@ -32,7 +34,17 @@
             </Grid.ColumnDefinitions>
 
             <TextBlock Grid.Column="0" Grid.Row="0" Text="Player Name:"/>
+            <TextBlock Grid.Column="1" Grid.Row="0" Text="{Binding CurrentCharacter.PlayerName}"/>
             <TextBlock Grid.Column="0" Grid.Row="1" Text="Character Name:"/>
+            <TextBlock Grid.Column="1" Grid.Row="1" Text="{Binding CurrentCharacter.Name}"/>
+            <TextBlock Grid.Column="0" Grid.Row="2" Text="Exp:"/>
+            <TextBlock Grid.Column="1" Grid.Row="2" Text="{Binding CurrentCharacter.ExperiencePoints}"/>
+            <TextBlock Grid.Column="0" Grid.Row="3" Text="Scrip:"/>
+            <TextBlock Grid.Column="1" Grid.Row="3" Text="{Binding CurrentCharacter.Scrip}"/>
+
+            <Button Grid.Column="0" Grid.Row="4" Content="Add XP" Click="buttonAddXp_OnClick"/>
         </Grid>
+
+        <ListView Grid.Column="1" Grid.Row="0" ItemsSource="{Binding Inventory}"/>
     </Grid>
 </Page>

@@ -13,6 +13,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Engine.ViewModel;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -23,9 +24,20 @@ namespace MCSWin
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        private Session _session;
+
         public MainPage()
         {
             this.InitializeComponent();
+
+            _session = new Session();
+
+            DataContext = _session;
+        }
+
+        private void buttonAddXp_OnClick(object sender, RoutedEventArgs e)
+        {
+            _session.buttonAddXp_OnClick();
         }
     }
 }
