@@ -10,6 +10,7 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         
@@ -18,9 +19,14 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-
-        <Grid Grid.Column="0" Grid.Row="0" Background="{StaticResource SystemControlBackgroundBaseLowBrush}" BorderThickness="5" BorderBrush="{StaticResource SystemControlBackgroundBaseLowBrush}">
+        
+        <Border Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" Background="{ThemeResource AppBarBackgroundThemeBrush}"/>
+        
+        <TextBlock Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center" Text="Stats"/>
+        <Grid Grid.Column="0" Grid.Row="1" Background="{StaticResource SystemControlBackgroundBaseLowBrush}" BorderThickness="5" BorderBrush="{StaticResource SystemControlBackgroundBaseLowBrush}">
             <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
@@ -29,22 +35,31 @@
             </Grid.RowDefinitions>
             
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
+            
 
             <TextBlock Grid.Column="0" Grid.Row="0" Text="Player Name:"/>
-            <TextBlock Grid.Column="1" Grid.Row="0" Text="{Binding CurrentCharacter.PlayerName}"/>
+            <TextBox Grid.Column="1" Grid.Row="0" Name="TextBoxPlayerName" Text="{Binding PlayerName}"/>
             <TextBlock Grid.Column="0" Grid.Row="1" Text="Character Name:"/>
-            <TextBlock Grid.Column="1" Grid.Row="1" Text="{Binding CurrentCharacter.Name}"/>
-            <TextBlock Grid.Column="0" Grid.Row="2" Text="Exp:"/>
-            <TextBlock Grid.Column="1" Grid.Row="2" Text="{Binding CurrentCharacter.ExperiencePoints}"/>
-            <TextBlock Grid.Column="0" Grid.Row="3" Text="Scrip:"/>
-            <TextBlock Grid.Column="1" Grid.Row="3" Text="{Binding CurrentCharacter.Scrip}"/>
+            <TextBox Grid.Column="1" Grid.Row="1" Name="TextBoxCharacterName"  Text="{Binding Name}"/>
+            <Button HorizontalAlignment="Center" Width="300" Grid.Column="1" Grid.Row="2" Content="Create" Click="buttonCreateCharacter_OnClick"/>
 
-            <Button Grid.Column="0" Grid.Row="4" Content="Add XP" Click="buttonAddXp_OnClick"/>
+
+            <TextBlock Grid.Column="0" Grid.Row="3" Text="Exp:"/>
+            <TextBlock Grid.Column="1" Grid.Row="3" Text="{Binding ExperiencePoints}"/>
+            <TextBlock Grid.Column="0" Grid.Row="4" Text="Scrip:"/>
+            <TextBlock Grid.Column="1" Grid.Row="4" Text="{Binding Scrip}"/>
+
+            <Button Grid.Column="0" Grid.Row="6" Content="Add XP" Click="buttonAddXp_OnClick"/>
+            <Button Grid.Column="1" Grid.Row="6" Content="Add Scrip" Click="buttonAddScrip_OnClick"/>
         </Grid>
 
-        <ListView Grid.Column="1" Grid.Row="0" ItemsSource="{Binding Inventory}"/>
+        <TextBlock Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" Text="Skills"/>
+        <ListView Grid.Column="1" Grid.Row="1" ItemsSource="{Binding Skills}"/>
+
+        <TextBlock Grid.Column="2" Grid.Row="0" HorizontalAlignment="Center" Text="Inventory"/>
+        <ListView Grid.Column="2" Grid.Row="1" ItemsSource="{Binding Inventory}"/>
     </Grid>
 </Page>

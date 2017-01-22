@@ -29,15 +29,22 @@ namespace MCSWin
         public MainPage()
         {
             this.InitializeComponent();
-
-            _session = new Session();
-
-            DataContext = _session;
         }
 
         private void buttonAddXp_OnClick(object sender, RoutedEventArgs e)
         {
             _session.buttonAddXp_OnClick();
+        }
+
+        private void buttonCreateCharacter_OnClick(object sender, RoutedEventArgs e)
+        {
+            _session = new Session(TextBoxCharacterName.Text, TextBoxPlayerName.Text);
+            DataContext = _session.CurrentCharacter;
+        }
+
+        private void buttonAddScrip_OnClick(object sender, RoutedEventArgs e)
+        {
+            _session.buttonAddScrip_OnClick();
         }
     }
 }
