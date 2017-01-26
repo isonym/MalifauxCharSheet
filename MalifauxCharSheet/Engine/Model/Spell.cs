@@ -4,28 +4,33 @@ namespace Engine.Model
 {
     public class Spell
     {
-        private readonly List<Magia> _magias;
-        private readonly List<Immuto> _immutos;
+        public Magia Magia { get; }
+        public Immuto Immuto { get; }
 
-        public List<Magia> Magias => _magias;
-        public List<Immuto> Immutos => _immutos;
-
-        public Spell()
+        public Spell(Magia magia, Immuto immuto)
         {
-            _magias = new List<Magia>();
-            _immutos = new List<Immuto>();
+            Magia = magia;
+            Immuto = immuto;
         }
 
-        public Spell(Magia magia, Immuto immuto) : this()
+        public static List<Spell> GenerateSpellCombinations(IEnumerable<Magia> magias, IEnumerable<Immuto> immutos)
         {
-            _magias.Add(magia);
-            _immutos.Add(immuto);
+            List<Spell> spells = new List<Spell>();
+
+            foreach (Magia magia in magias)
+            {
+                foreach (Immuto immuto in immutos)
+                {
+                    spells.Add(new Spell(magia, immuto));
+                }
+            }
+
+            return spells;
         }
 
-        public Spell(List<Magia> magias, List<Immuto> immutos)
+        public override string ToString()
         {
-            _magias = magias;
-            _immutos = immutos;
+            return $"<Spell {Magia} + {Immuto}>";
         }
     }
 }

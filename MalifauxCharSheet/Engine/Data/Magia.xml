@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Magias>
+  <Magia Name="Elemental Engulf"
+         Desc="The Caster causes a target to be surrounded with dangerous elemental energy."
+         MagiaClass="Sorcery" Aspect="Tenacity"
+         ActionPoints="1" TargetNumber="5T"
+         Resist="Willpower" Range="5"/>
+  <Magia Name="Elemental Projectile"
+         Desc="The Caster hurls a bolt of magical power at a target, much like a bullet."
+         MagiaClass="Sorcery" Aspect="Intellect"
+         ActionPoints="1" TargetNumber="3T"
+         Resist="Defence" Range="5"/>
+  <Magia Name="Elemental Strike"
+         Desc="The Caster strikes his opponent with a melee attack infused with elemental energy."
+         MagiaClass="Sorcery" Aspect="Intellect"
+         ActionPoints="1" TargetNumber="3T"
+         Resist="Defence" Range="2"/>
+  <Magia Name="Telekinetic Movement"
+         Desc="The Caster moves a target with his mind, as if it were grasped by unseen hands."
+         MagiaClass="Sorcery" Aspect="Tenacity"
+         ActionPoints="1" TargetNumber="7M"
+         Resist="Willpower" Range="5"/>
+  <Magia Name="Telekinetic Push"
+         Desc="The Caster unleashes a blast or wave of force at a target, shoving it with his mind."
+         MagiaClass="Sorcery" Aspect="Intellect"
+         ActionPoints="1" TargetNumber="7M"
+         Resist="Defence" Range="5"/>
+  <Magia Name="Sleep"
+         Desc="The caster causes the target to lose consciousness."
+         MagiaClass="Sorcery" Aspect="Tenacity"
+         ActionPoints="2" TargetNumber="10M"
+         Range="3"/>
+  <Magia Name="Wrench"
+         Desc="The caster reaches into the target with telekinetic force, wrenching internal organs about."
+         MagiaClass="Sorcery" Aspect="Tenacity"
+         ActionPoints="2" TargetNumber="10T"
+         Range="3"/>
+</Magias>

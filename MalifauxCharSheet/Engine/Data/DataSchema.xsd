@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Immutos">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" name="Immuto">
+          <xs:complexType>
+            <xs:attribute name="Name" type="xs:string" use="required" />
+            <xs:attribute name="Desc" type="xs:string" use="required" />
+            <xs:attribute name="ImmutoClass" type="xs:string" use="required" />
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="Magias">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" name="Magia">
+          <xs:complexType>
+            <xs:attribute name="Name" type="xs:string" use="required" />
+            <xs:attribute name="Desc" type="xs:string" use="required" />
+            <xs:attribute name="MagiaClass" type="xs:string" use="required" />
+            <xs:attribute name="Aspect" type="xs:string" use="required" />
+            <xs:attribute name="ActionPoints" type="xs:int" use="required" />
+            <xs:attribute name="TargetNumber" type="xs:string" use="required" />
+            <xs:attribute name="Resist" type="xs:string" use="optional" />
+            <xs:attribute name="Range" type="xs:int" use="required" />
+            <xs:attribute name="Effect" type="xs:string" use="required" />
+            <xs:attribute name="Requirements" type="xs:string" use="optional" />
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

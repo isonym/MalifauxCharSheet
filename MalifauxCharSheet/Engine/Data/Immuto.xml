@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Immutos>
+  <Immuto Name="Alternate Resistance" ImmutoClass="Alteration"
+          Desc="If this Action is resisted by Wp, it is resisted by Df instead. If it is resisted by Df it is resisted by Wp instead."/>
+  <Immuto Name="Blast" ImmutoClass="Alteration"
+          Desc="This Immuto may be taken up to three times. The Action's Damage Flip gains 0/0/b the first time it is taken, 0/b/b the second time, and 0/b/bb the third time. These effects are added to the damage the Magia deals."/>
+  <Immuto Name="Combined Spell" ImmutoClass="Alteration"
+          Desc="This Spell combines the effects of two Spells. Choose a second Magia and add its effects to this Spell. The Spell must follow these requirements: •The second Magia must have a Base TN equal to or lower than the Base TN of the primary Magia. •The resist of the Magia must be the same. •The Primary Magia may only have Immuto that can be applied to both Magia. •The Magia must be different."/>
+</Immutos>
